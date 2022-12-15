@@ -7,33 +7,25 @@ for (let i = 0; i < 100; i++) {
 }
 
 // You may write your code here!
+const colors = document.querySelectorAll(".color");
+const cells = document.querySelectorAll(".cell");
+const erase = document.querySelector("#erase");
+const currentColor = document.querySelector("#current-color");
 
-document
-  .querySelectorAll(".color")
-  .forEach((color) =>
-    color.addEventListener(
-      "click",
-      ({ target }) =>
-        (document.querySelector("#current-color").style.background =
-          target.style.background)
-    )
-  );
+colors.forEach((color) =>
+  color.addEventListener(
+    "click",
+    ({ target }) => (currentColor.style.background = target.style.background)
+  )
+);
 
-document
-  .querySelectorAll(".cell")
-  .forEach((cell) =>
-    cell.addEventListener(
-      "click",
-      ({ target }) =>
-        (target.style.background =
-          document.querySelector("#current-color").style.background)
-    )
-  );
+cells.forEach((cell) =>
+  cell.addEventListener(
+    "click",
+    ({ target }) => (target.style.background = currentColor.style.background)
+  )
+);
 
-document
-  .querySelector("#erase")
-  .addEventListener("click", () =>
-    document
-      .querySelectorAll(".cell")
-      .forEach((cell) => (cell.style.background = "white"))
-  );
+erase.addEventListener("click", () =>
+  cells.forEach((cell) => (cell.style.background = "white"))
+);
