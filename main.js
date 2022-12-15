@@ -9,7 +9,7 @@ for (let i = 0; i < 100; i++) {
 // You may write your code here!
 const colors = document.querySelectorAll(".color");
 const cells = document.querySelectorAll(".cell");
-const erase = document.querySelector("#erase");
+const eraser = document.querySelector("#eraser");
 const currentColor = document.querySelector("#current-color");
 
 colors.forEach((color) =>
@@ -26,6 +26,6 @@ cells.forEach((cell) =>
   )
 );
 
-erase.addEventListener("click", () =>
+eraser.addEventListener("click", () =>
   cells.forEach((cell) => (cell.style.background = "white"))
 );
